@@ -15,7 +15,7 @@ class Connexion extends React.Component {
 			<div className="connexionBox">
 				<form className="connexion" onSubmit={(e) => this.goToApp(e)} >
 					<h1>Ma Boîte à Recettes</h1>
-					<input type="text" placeholder="Nom du Chef" pattern="[A-Za-z-]{1,}" required ref={(input) => {this.boxInput = input}} />
+					<input type="text" placeholder="Nom du Chef" pattern="[A-Za-z-é]{1,}" required ref={(input) => {this.boxInput = input}} />
 					<button type="submit">GO</button>
 					<p>Pas de caractères spéciaux.</p>
 				</form>
