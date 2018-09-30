@@ -9,6 +9,14 @@ class Admin extends React.Component {
         owner: null
     }
 
+    componentDidMount() {
+        base.onAuth(user => {
+            if(user) {
+                this.traitementConnexion(null, {user})
+            }
+        })
+    }
+
     traiterChangement = (event, key) => {
         const recette = this.props.recettes[key];
         const majRecette = {
@@ -20,6 +28,11 @@ class Admin extends React.Component {
 
     connexion = provider => {
         base.authWithOAuthPopup(provider, this.traitementConnexion);
+    };
+
+    deconnexion = () => {
+        base.unauth();
+        this.setState({ uid: null })
     };
 
     traitementConnexion = (err, authData) => {
@@ -83,6 +96,8 @@ class Admin extends React.Component {
 
     render() {
 
+        const deconnexion = <button onClick={this.deconnexion}>Déconnexion!</button>
+
         //Si il existe un propriétaire
         if(!this.state.uid) {
             return <div>{this.renderLogin()}</div>
@@ -108,6 +123,7 @@ class Admin extends React.Component {
                 {adminCards}
                <footer>
                    <button onClick={this.props.chargerExemple}>Remplir</button>
+                   {deconnexion}
                </footer>
            </div>
         )
