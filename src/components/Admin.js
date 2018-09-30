@@ -122,7 +122,7 @@ class Admin extends React.Component {
                <AjouterRecette ajouterRecette={this.props.ajouterRecette} />
                 {adminCards}
                <footer>
-                   <button onClick={this.props.chargerExemple}>Remplir</button>
+                   <button onClick={this.props.chargerExemple}>Test Remplissage</button>
                    {deconnexion}
                </footer>
            </div>

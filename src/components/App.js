@@ -58,9 +58,11 @@ class App extends React.Component {
 		return (
 			<div className="box">
 				<Header pseudo={this.props.params.pseudo} />
+				<h2 className="indications">Retrouve toutes les recettes que tu as déjà ajoutées!</h2>
 				<div className="cards">
 					{cards}
 				</div>
+				<h2 className="indications">Ici tu trouveras dans le cadre rouge, de quoi remplir une nouvelle recette, et l'ajouter à ta boite à recettes. Dans les cadres verts, tu retrouveras tes recettes ajoutées. <br/> Tu pourras ainsi les supprimer, ou les modifier.</h2>
 				<Admin 
 				recettes={this.state.recettes}
 				chargerExemple={this.chargerExemple} 
