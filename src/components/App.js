@@ -67,6 +67,7 @@ class App extends React.Component {
 				ajouterRecette={this.ajouterRecette} 
 				majRecette={this.majRecette} 
 				supprimerRecette={this.supprimerRecette}
+				pseudo={this.props.params.pseudo}
 				/>
 			</div>
 		)
